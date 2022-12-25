@@ -1,19 +1,22 @@
 package config;
 
+import com.codeborne.selenide.Configuration;
 import org.aeonbits.owner.ConfigFactory;
-
-import static org.assertj.core.api.Assertions.assertThat;
 
 public class Auth {
     public static AuthConfig config = ConfigFactory.create(AuthConfig.class, System.getProperties());
 
-
     static {
+            String remoteLogin = Auth.config.login();
+        if (remoteLogin != null) {
+                Configuration.remote = remoteLogin;
+
+            String remotePassword = Auth.config.pass();
+            if (remotePassword != null) {
+                Configuration.remote = remotePassword;
 
 
-        assertThat(config.login());
-
-        assertThat(config.pass());
-
+            }
+        }
     }
 }

@@ -96,13 +96,13 @@ public class XiaomiPages {
     }
 
     @Step("Login with {username}/{password}")
-    public void LoginWith(String username, String password) {
+    public void LoginWith(String remoteLogin, String remotePassword) {
         step("Click by authorization button", () ->
                 authUser.click());
         step("Enter username", () ->
-                emailInput.sendKeys(username));
+                emailInput.sendKeys(remoteLogin));
         step("Enter password", () ->
-                passInput.sendKeys(password));
+                passInput.sendKeys(remotePassword));
         step("Click by enter button", () ->
                 authButton.click());
         step("Check text", () ->
