@@ -1,5 +1,4 @@
 
-
 package config;
 
 import org.aeonbits.owner.Config;
@@ -11,8 +10,8 @@ import org.aeonbits.owner.Config;
 public interface AuthConfig extends Config {
 
     @Key("username")
-    String getLogin();
+    String login();
 
     @Key("password")
-    String getPass();
+    String pass();
 }
