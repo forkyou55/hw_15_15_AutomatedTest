@@ -1,6 +1,7 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
+import config.Auth;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
@@ -96,13 +97,13 @@ public class XiaomiPages {
     }
 
     @Step("Login with {username}/{password}")
-    public void LoginWith(String remoteLogin, String remotePassword) {
+    public void LoginWith() {
         step("Click by authorization button", () ->
                 authUser.click());
         step("Enter username", () ->
-                emailInput.sendKeys(remoteLogin));
+                emailInput.sendKeys(Auth.config.getLogin()));
         step("Enter password", () ->
-                passInput.sendKeys(remotePassword));
+                passInput.sendKeys(Auth.config.getPass()));
         step("Click by enter button", () ->
                 authButton.click());
         step("Check text", () ->
