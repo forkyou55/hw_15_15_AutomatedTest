@@ -96,7 +96,7 @@ public class XiaomiPages {
     }
 
     @Step("Login with {username}/{password}")
-    public void LoginWith(String username, String password) {
+    public void loginWith(String username, String password) {
         step("Click by authorization button", () ->
                 authUser.click());
         step("Enter username", () ->

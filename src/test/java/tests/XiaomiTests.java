@@ -51,6 +51,6 @@ public class XiaomiTests extends TestBase {
     void authorizationTests() {
         xiaomiPage
                 .openPage()
-                .LoginWith(Auth.config.login(), Auth.config.pass());
+                .loginWith(Auth.config.login(), Auth.config.pass());
     }
 }
