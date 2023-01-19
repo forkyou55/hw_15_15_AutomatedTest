@@ -1,8 +1,13 @@
 package config;
 
 import org.aeonbits.owner.Config;
-
+@Config.LoadPolicy(Config.LoadType.MERGE)
+@Config.Sources({
+        "classpath:remote.properties",
+        "classpath:local.properties"
+})
 public interface WebDriverConfig extends Config {
+
     @Key("baseUrl")
     @DefaultValue("https://mi-montenegro.me/")
     String getBaseUrl();
